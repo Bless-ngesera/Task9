@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 public class SignIn extends JDialog{
@@ -15,4 +17,12 @@ public class SignIn extends JDialog{
     private JLabel Text;
 
 
+    public SignIn() {
+        signInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+    }
 }
