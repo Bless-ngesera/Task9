@@ -26,7 +26,6 @@ public class SignUp extends JDialog {
     private JButton signInButton;
     private JButton cancelButton;
 
-
     public SignUp(JFrame frame) {
         super(frame, "Sign Up", true);
         setContentPane(SignUpPanel);
@@ -35,23 +34,5 @@ public class SignUp extends JDialog {
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
 
-        SignUpButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        signInButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        cancelButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-    }
+}
 }
