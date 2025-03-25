@@ -5,7 +5,6 @@ import java.sql.*;
 public class SignUp {
     private JDialog dialog;
     private JPanel SignUpPanel;
-    private JLabel Logo;
     private JLabel Title;
     private JLabel firstName;
     private JTextField FnameField;
@@ -15,7 +14,6 @@ public class SignUp {
     private JTextField emailField;
     private JLabel phone;
     private JTextField phoneField;
-    private JTextField userField;
     private JPasswordField PasswordField;
     private JLabel password;
     private JLabel ConfPassword;
@@ -24,18 +22,15 @@ public class SignUp {
     private JLabel text;
     private JButton signInButton;
     private JButton cancelButton;
+    private JTextField userNameField;
+    private JLabel userName;
 
     public SignUp(JFrame parent) {
         dialog = new JDialog(parent, "Sign Up", true);
         dialog.setContentPane(SignUpPanel);
-        dialog.setMinimumSize(new Dimension(800, 500));
+        dialog.setMinimumSize(new Dimension(800, 550));
         dialog.setLocationRelativeTo(parent);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-
-        // Initialize logo
-        ImageIcon originalIcon = new ImageIcon(getClass().getResource("/new.png"));
-        Image scaledImage = originalIcon.getImage().getScaledInstance(120, 120, Image.SCALE_SMOOTH);
-        Logo.setIcon(new ImageIcon(scaledImage));
 
         // Button listeners
         SignUpButton.addActionListener(e -> registerUser());
@@ -53,7 +48,7 @@ public class SignUp {
         String lastName = LnameField.getText();
         String email = emailField.getText();
         String phone = phoneField.getText();
-        String username = userField.getText();
+        String username = userNameField.getText();
         String password = new String(PasswordField.getPassword());
         String confirmPassword = new String(ConfpasswordField.getPassword());
 

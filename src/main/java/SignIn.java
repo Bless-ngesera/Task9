@@ -5,7 +5,6 @@ import java.sql.*;
 public class SignIn {
     private JDialog dialog;
     private JPanel SignInPanel;
-    private JLabel Logo;
     private JLabel TiTle;
     private JLabel UseName;
     private JTextField userNameField;
@@ -17,17 +16,13 @@ public class SignIn {
     private JLabel Text;
 
     public SignIn(JFrame parent) {
-        dialog = new JDialog(parent, "Sign In", true);
+        dialog = new JDialog(parent);
+        dialog.setTitle("Sign In");
         dialog.setContentPane(SignInPanel);
         dialog.setMinimumSize(new Dimension(600, 400));
         dialog.setLocationRelativeTo(parent);
+        dialog.setModal(true);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-
-
-        ImageIcon originalIcon = new ImageIcon(getClass().getResource("/login.png"));
-        Image scaledImage = originalIcon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
-        Logo.setIcon(new ImageIcon(scaledImage));
-
 
         signInButton.addActionListener(e -> login());
         signUpButton.addActionListener(e -> {
